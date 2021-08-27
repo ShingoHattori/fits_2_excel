@@ -15,11 +15,11 @@ class FitsHandler(object):
 
 
     def header(self):
-        header = self.hdulist.header
+        header = fits.getheader(self.FitsPath)
         self.header = header
         return header
 
     def data(self):
-        data = self.hdulist.data
+        data = fits.getdata(self.FitsPath)
         self.data = data
         return data
